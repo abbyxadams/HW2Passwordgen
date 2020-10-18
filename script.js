@@ -103,13 +103,13 @@ generateBtn.addEventListener("click", writePassword);
 function getuserOptions(){
     //Ask the user 1 prompts
     //- length?
-    var length = prompt("length? more then 8 less then 128")
+    var length = prompt("How many characters would you like in your password? You can schoose any number between 8 and 128.")
   
     //ok/cancel (true/false)
-    var lowerLetters = confirm("click ok to include lower case letters");
-    var upperLetters = confirm("click ok to include upper case letters")
-    var numeric= confirm("click ok to include numbers")
-    var symbols = confirm("click ok to include symbols")
+    var lowerLetters = confirm("Click ok to include lower case letters.");
+    var upperLetters = confirm("Click ok to include upper case letters.")
+    var numeric= confirm("Click ok to include numbers.")
+    var symbols = confirm("Click ok to include symbols.")
 
 
 
