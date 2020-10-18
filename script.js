@@ -83,46 +83,53 @@ var specialCharacters = [
     'X',
     'Y',
     'Z'
+
+
   ];
-
-
-
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 
+  // Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
+
 function getuserOptions(){
     //Ask the user 1 prompts
-
     //- length?
     var length = prompt("length? more then 8 less then 128")
   
     //ok/cancel (true/false)
     var lowerLetters = confirm("click ok to include lower case letters");
     var upperLetters = confirm("click ok to include upper case letters")
-    var numeric= confirm("click ok to include lower case letters")
-    var symbols = confirm("click ok to include lower case letters")
+    var numeric= confirm("click ok to include numbers")
+    var symbols = confirm("click ok to include symbols")
 
 
 
     console.log("USERS OPTIONS", length, lowerLetters, upperLetters, numeric, symbols)
     //-number?
-    //-sy,bols?
+    //-symbols?
     //-lower case?
     //uppercase?
     
    // -if all confirm responses are  false 
-    //return to begining 
+    //return to beginning  
      
     //condition for the length
 
  
     //return is an obj which has 5 keys
     var userOptions = {
-       lenght: length,
+       length: length,
        lowerCase: lowerLetters,
-       uppserCase: upperLetters,
+       upperCase: upperLetters,
       numbers: numeric,
       symbol:symbols
    }
@@ -140,8 +147,43 @@ function generatePassword() {
     //its the obj with user options
     console.log(options)
 
-}
+// variable to store password as it being created
+//var results= [];
 
+//array to store types of character to include 
+ var selectedChar = []
+//contain one of each type of chose characters 
+var guranteeChar = []
+
+
+ if(options.lowerCase){
+   //combimimh the slectedChar arr w/ lowercasedCharacters arr
+   selectedChar = selectedChar.concat(lowerCasedCharacters)
+  //select random letter from lowerCasedCharacyers
+  var indexNum= Math.floor(Math.random() * lowerCasedCharacters.length);
+  var randomLet =lowerCasedCharacters[indexNum]
+  guranteeChar.push(randomLet)
+
+ }
+
+ if(options.upperCase){
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+ //return the password
+
+}
 
 
 
@@ -164,8 +206,12 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
+
 
 
 
